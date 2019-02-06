@@ -1,2 +1,22 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+{{#each places}}
+<strong>Name: </strong>{{name}}
+<em>is a {{type}}</em>
+<a href="/edit/{{_id}}"><button>Edit</button></a>
+<br><br>
+{{/each}}
+
+<h2>Create a new Place</h2>
+
+<form action="/" method="post">
+<label for="name">Name</label>
+<input type="text" name="name" placeholder="Name">
+<label for="type">Type</label>
+<select name="type" id="type">
+  <option value="coffeeshop">Coffeeshop</option>
+  <option value="bookstore">Bookstore</option>
+</select>
+<button type="submit">Submit</button>
+</form>
